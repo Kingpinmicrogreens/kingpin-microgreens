@@ -1,1661 +1,1016 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Kingpin Microgreens | Fresh Microgreens in Dehradun</title>
-
-  <meta
-    name="description"
-    content="Fresh, nutritious microgreens delivered to your doorstep in Dehradun. Try Kingpin Microgreens with our ₹99 Trial Pack and monthly membership plans."
-  >
-
-  <meta name="theme-color" content="#176b3a">
-
-  <style>
-    :root {
-      --green: #176b3a;
-      --green-dark: #0d4d29;
-      --green-light: #eaf6ed;
-      --lime: #a8d96c;
-      --cream: #fbfdf9;
-      --white: #ffffff;
-      --text: #183126;
-      --muted: #617068;
-      --border: #dce9df;
-      --shadow: 0 15px 40px rgba(18, 71, 39, 0.10);
-      --radius: 22px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    .container {
-      width: min(1160px, 92%);
-      margin: auto;
-    }
-
-    /* NAVBAR */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.96);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(12px);
-    }
-
-    .nav {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-logo {
-      width: 50px;
-      height: 50px;
-      object-fit: contain;
-      border-radius: 13px;
-    }
-
-    .brand-text strong {
-      display: block;
-      font-size: 20px;
-      color: var(--green-dark);
-    }
-
-    .brand-text span {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    nav a {
-      font-weight: 600;
-      font-size: 14px;
-      color: #33463c;
-    }
-
-    nav a:hover {
-      color: var(--green);
-    }
-
-    .nav-order {
-      background: var(--green);
-      color: white !important;
-      padding: 12px 18px;
-      border-radius: 999px;
-    }
-
-    .menu-btn {
-      display: none;
-      border: 0;
-      background: var(--green-light);
-      color: var(--green-dark);
-      padding: 10px 13px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 22px;
-    }
-
-    /* HERO */
-
-    .hero {
-      padding: 80px 0 70px;
-      background:
-        radial-gradient(circle at 80% 20%, #dff2c9 0, transparent 28%),
-        linear-gradient(135deg, #f8fcf6, #edf8ed);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      align-items: center;
-      gap: 55px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #e0f1d8;
-      color: var(--green-dark);
-      border: 1px solid #cbe5bf;
-      padding: 9px 15px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: clamp(46px, 6vw, 76px);
-      line-height: 0.98;
-      letter-spacing: -3px;
-      color: #143526;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 span {
-      color: var(--green);
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 620px;
-      margin-bottom: 30px;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 15px 23px;
-      border-radius: 999px;
-      font-weight: 800;
-      border: 2px solid transparent;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: var(--green);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--green-dark);
-    }
-
-    .btn-outline {
-      background: white;
-      border-color: var(--border);
-      color: var(--green-dark);
-    }
-
-    .hero-image {
-      position: relative;
-    }
-
-    .hero-image img {
-      height: 510px;
-      object-fit: cover;
-      border-radius: 35px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card {
-      position: absolute;
-      left: -25px;
-      bottom: 25px;
-      background: white;
-      padding: 18px 22px;
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      max-width: 250px;
-    }
-
-    .hero-card strong {
-      display: block;
-      color: var(--green-dark);
-      margin-bottom: 4px;
-    }
-
-    .hero-card span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* COMMON */
-
-    section {
-      padding: 85px 0;
-    }
-
-    .section-head {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 45px;
-    }
-
-    .eyebrow {
-      color: var(--green);
-      font-weight: 800;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 10px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(32px, 4vw, 50px);
-      line-height: 1.05;
-      color: #163729;
-      margin-bottom: 14px;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    /* WHY */
-
-    .why {
-      background: white;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .feature {
-      padding: 28px 22px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: #fbfefb;
-    }
-
-    .feature-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 15px;
-      display: grid;
-      place-items: center;
-      background: var(--green-light);
-      font-size: 24px;
-      margin-bottom: 18px;
-    }
-
-    .feature h3 {
-      margin-bottom: 8px;
-      color: var(--green-dark);
-    }
-
-    .feature p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* VARIETIES */
-
-    .varieties {
-      background: #f5faf4;
-    }
-
-    .variety-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .variety {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(20,70,38,0.05);
-    }
-
-    .variety img {
-      height: 270px;
-      object-fit: cover;
-    }
-
-    .variety-content {
-      padding: 22px;
-    }
-
-    .variety-content h3 {
-      color: var(--green-dark);
-      font-size: 23px;
-      margin-bottom: 8px;
-    }
-
-    .variety-content p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .variety-note {
-      margin-top: 25px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* FARM */
-
-    .farm-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      align-items: center;
-      gap: 55px;
-    }
-
-    .farm-photo img {
-      height: 520px;
-      object-fit: cover;
-      border-radius: 30px;
-      box-shadow: var(--shadow);
-    }
-
-    .farm-content h2 {
-      font-size: clamp(34px, 4vw, 52px);
-      line-height: 1.05;
-      margin-bottom: 20px;
-      color: #163729;
-    }
-
-    .farm-content p {
-      color: var(--muted);
-      margin-bottom: 17px;
-    }
-
-    .farm-points {
-      margin: 25px 0;
-      display: grid;
-      gap: 12px;
-    }
-
-    .farm-point {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .tick {
-      width: 27px;
-      height: 27px;
-      flex: 0 0 27px;
-      border-radius: 50%;
-      background: var(--green-light);
-      color: var(--green);
-      display: grid;
-      place-items: center;
-      font-weight: bold;
-    }
-
-    /* PLANS */
-
-    .plans {
-      background: #edf7ed;
-    }
-
-    .plan-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .plan {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 25px;
-      padding: 32px 27px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 10px 30px rgba(20,70,38,0.05);
-    }
-
-    .plan.featured {
-      border: 2px solid var(--green);
-      transform: translateY(-8px);
-      position: relative;
-    }
-
-    .popular {
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--green);
-      color: white;
-      padding: 6px 15px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    .plan h3 {
-      color: var(--green-dark);
-      font-size: 23px;
-    }
-
-    .price {
-      font-size: 42px;
-      font-weight: 900;
-      color: #153728;
-      margin: 12px 0 3px;
-    }
-
-    .price small {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--muted);
-    }
-
-    .plan-desc {
-      color: var(--muted);
-      font-size: 14px;
-      min-height: 45px;
-      margin-bottom: 20px;
-    }
-
-    .plan ul {
-      list-style: none;
-      margin-bottom: 25px;
-      flex: 1;
-    }
-
-    .plan li {
-      padding: 9px 0;
-      color: #4f6259;
-      border-bottom: 1px solid #edf2ee;
-      font-size: 14px;
-    }
-
-    .plan li::before {
-      content: "✓";
-      color: var(--green);
-      font-weight: bold;
-      margin-right: 9px;
-    }
-
-    /* MEMBERSHIP */
-
-    .membership {
-      background: white;
-    }
-
-    .membership-box {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 30px;
-      padding: 25px;
-      background: #f4faf3;
-      border-radius: 30px;
-      border: 1px solid var(--border);
-    }
-
-    .membership-info {
-      padding: 30px;
-    }
-
-    .membership-info h2 {
-      font-size: 38px;
-      line-height: 1.1;
-      color: #153728;
-      margin-bottom: 16px;
-    }
-
-    .membership-info p {
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .membership-list {
-      list-style: none;
-    }
-
-    .membership-list li {
-      margin: 12px 0;
-      font-weight: 600;
-    }
-
-    .membership-list li::before {
-      content: "✓";
-      color: var(--green);
-      margin-right: 10px;
-    }
-
-    .form-wrap {
-      background: white;
-      border-radius: 22px;
-      overflow: hidden;
-      min-height: 600px;
-      box-shadow: var(--shadow);
-    }
-
-    .form-wrap iframe {
-      width: 100%;
-      height: 700px;
-      border: 0;
-    }
-
-    /* GALLERY */
-
-    .gallery {
-      background: #f7fbf6;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr 0.7fr;
-      grid-template-rows: 230px 230px;
-      gap: 15px;
-    }
-
-    .gallery-item {
-      overflow: hidden;
-      border-radius: 20px;
-    }
-
-    .gallery-item:first-child {
-      grid-row: 1 / 3;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: 0.4s;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.04);
-    }
-
-    /* CTA */
-
-    .cta {
-      background: var(--green);
-      color: white;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: clamp(34px, 5vw, 55px);
-      line-height: 1.05;
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      opacity: 0.88;
-      max-width: 600px;
-      margin: 0 auto 25px;
-    }
-
-    .cta .btn-primary {
-      background: white;
-      color: var(--green-dark);
-    }
-
-    /* CONTACT */
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .contact-card {
-      background: white;
-      border: 1px solid var(--border);
-      padding: 30px;
-      border-radius: 22px;
-      text-align: center;
-    }
-
-    .contact-card .icon {
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
-
-    .contact-card h3 {
-      color: var(--green-dark);
-      margin-bottom: 5px;
-    }
-
-    .contact-card p {
-      color: var(--muted);
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #0d2d1b;
-      color: white;
-      padding: 45px 0 25px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 35px;
-    }
-
-    footer h3 {
-      margin-bottom: 12px;
-    }
-
-    footer p,
-    footer a {
-      color: #b9c9bf;
-      font-size: 14px;
-    }
-
-    footer a:hover {
-      color: white;
-    }
-
-    .footer-links {
-      display: grid;
-      gap: 8px;
-    }
-
-    .copyright {
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding-top: 20px;
-      color: #91a79a;
-      text-align: center;
-      font-size: 13px;
-    }
-
-    /* WHATSAPP FLOAT */
-
-    .whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 900;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: #25D366;
-      color: white;
-      display: grid;
-      place-items: center;
-      font-size: 27px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 900px) {
-
-      .hero-grid,
-      .farm-grid,
-      .membership-box {
-        grid-template-columns: 1fr;
-      }
-
-      .features {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .variety-grid,
-      .plan-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .plan.featured {
-        transform: none;
-      }
-
-      .hero-image img,
-      .farm-photo img {
-        height: 400px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      nav {
-        position: absolute;
-        top: 78px;
-        left: 0;
-        right: 0;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        padding: 20px;
-        background: white;
-        border-bottom: 1px solid var(--border);
-      }
-
-      nav.open {
-        display: flex;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      section {
-        padding: 65px 0;
-      }
-
-      .hero {
-        padding: 55px 0;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-        letter-spacing: -2px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .hero-image img,
-      .farm-photo img {
-        height: 330px;
-      }
-
-      .hero-card {
-        left: 15px;
-        bottom: 15px;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 180px 180px 180px;
-      }
-
-      .gallery-item:first-child {
-        grid-column: 1 / 3;
-        grid-row: auto;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .membership-info {
-        padding: 15px;
-      }
-
-      .form-wrap iframe {
-        height: 750px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .buttons {
-        width: 100%;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kingpin Microgreens | Fresh Microgreens in Dehradun</title>
+
+<meta name="description"
+content="Fresh, nutritious microgreens grown in Pondha, Dehradun. Order Kingpin Microgreens and choose from our Trial Pack and monthly delivery plans.">
+
+<style>
+:root{
+  --green:#176b3a;
+  --dark:#0d3b24;
+  --light:#f3faef;
+  --cream:#fbfdf8;
+  --text:#173024;
+  --muted:#65756b;
+  --white:#ffffff;
+  --border:#dfe9df;
+  --shadow:0 12px 35px rgba(20,70,40,.10);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--text);
+  background:var(--cream);
+  line-height:1.6;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(10px);
+}
+
+.nav{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:800;
+}
+
+.brand img{
+  width:52px;
+  height:52px;
+  object-fit:contain;
+  border-radius:14px;
+}
+
+.brand-text strong{
+  display:block;
+  font-size:20px;
+  color:var(--dark);
+}
+
+.brand-text span{
+  font-size:12px;
+  color:var(--muted);
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:25px;
+  font-size:14px;
+  font-weight:600;
+}
+
+nav a:hover{
+  color:var(--green);
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:13px 23px;
+  border-radius:999px;
+  border:2px solid var(--green);
+  font-weight:700;
+  transition:.2s;
+  cursor:pointer;
+}
+
+.btn-primary{
+  background:var(--green);
+  color:white;
+}
+
+.btn-primary:hover{
+  background:var(--dark);
+  transform:translateY(-2px);
+}
+
+.btn-outline{
+  color:var(--green);
+  background:white;
+}
+
+.btn-outline:hover{
+  background:var(--light);
+}
+
+/* HERO */
+
+.hero{
+  background:linear-gradient(110deg,#f2faeb,#ffffff);
+  padding:85px 0 75px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:55px;
+}
+
+.badge{
+  display:inline-block;
+  background:#e6f5df;
+  color:var(--green);
+  padding:8px 15px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:clamp(44px,6vw,72px);
+  line-height:1.02;
+  letter-spacing:-2px;
+  color:#10251a;
+  margin-bottom:25px;
+}
+
+.hero h1 span{
+  color:var(--green);
+}
+
+.hero p{
+  max-width:600px;
+  color:#526259;
+  font-size:18px;
+  margin-bottom:30px;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.hero-photo{
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  background:#eaf5e4;
+}
+
+.hero-photo img{
+  width:100%;
+  height:520px;
+  object-fit:cover;
+}
+
+/* COMMON */
+
+section{
+  padding:90px 0;
+}
+
+.section-heading{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 45px;
+}
+
+.eyebrow{
+  color:var(--green);
+  font-weight:800;
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.section-heading h2{
+  font-size:42px;
+  line-height:1.15;
+  color:var(--dark);
+  margin-bottom:12px;
+}
+
+.section-heading p{
+  color:var(--muted);
+}
+
+/* GREENS */
+
+.greens{
+  background:white;
+}
+
+.green-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.green-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:.25s;
+}
+
+.green-card:hover{
+  transform:translateY(-5px);
+}
+
+.green-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+
+.green-content{
+  padding:25px;
+}
+
+.green-content h3{
+  font-size:24px;
+  color:var(--dark);
+  margin-bottom:5px;
+}
+
+.green-tagline{
+  color:var(--green);
+  font-weight:800;
+  font-size:16px;
+  margin-bottom:12px;
+}
+
+.green-content p{
+  color:var(--muted);
+}
+
+/* FARM */
+
+.farm{
+  background:var(--light);
+}
+
+.farm-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.farm-photo{
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.farm-photo img{
+  width:100%;
+  height:480px;
+  object-fit:cover;
+}
+
+.farm-text h2{
+  font-size:45px;
+  line-height:1.1;
+  color:var(--dark);
+  margin-bottom:20px;
+}
+
+.farm-text p{
+  color:var(--muted);
+  margin-bottom:22px;
+}
+
+.checks{
+  display:grid;
+  gap:12px;
+  margin-bottom:25px;
+}
+
+.check{
+  font-weight:600;
+}
+
+.check span{
+  color:var(--green);
+  margin-right:8px;
+}
+
+/* PLANS */
+
+.plans{
+  background:white;
+}
+
+.plan-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.plan{
+  border:1px solid var(--border);
+  border-radius:25px;
+  padding:35px 28px;
+  text-align:center;
+  background:white;
+  box-shadow:var(--shadow);
+  position:relative;
+}
+
+.plan.popular{
+  border:2px solid #7bcf4d;
+  background:#f4ffed;
+  transform:translateY(-8px);
+}
+
+.popular-label{
+  position:absolute;
+  top:-15px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--green);
+  color:white;
+  padding:6px 18px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.plan h3{
+  font-size:22px;
+  color:var(--dark);
+}
+
+.price{
+  font-size:44px;
+  font-weight:900;
+  color:#101f16;
+  margin:8px 0 18px;
+}
+
+.plan ul{
+  list-style:none;
+  text-align:left;
+  margin-bottom:25px;
+}
+
+.plan li{
+  margin:10px 0;
+  color:#526259;
+}
+
+.plan li::before{
+  content:"✓";
+  color:var(--green);
+  font-weight:900;
+  margin-right:9px;
+}
+
+/* MEMBERSHIP */
+
+.membership{
+  background:linear-gradient(120deg,#eaf8e2,#f9fff6);
+}
+
+.membership-box{
+  display:grid;
+  grid-template-columns:1.4fr .6fr;
+  align-items:center;
+  gap:35px;
+  background:white;
+  padding:45px;
+  border-radius:28px;
+  box-shadow:var(--shadow);
+}
+
+.membership-box h2{
+  font-size:38px;
+  color:var(--dark);
+  margin-bottom:12px;
+}
+
+.membership-box p{
+  color:var(--muted);
+}
+
+.membership-action{
+  text-align:center;
+}
+
+/* CONTACT */
+
+.contact{
+  background:var(--dark);
+  color:white;
+}
+
+.contact .section-heading h2{
+  color:white;
+}
+
+.contact .section-heading p{
+  color:#c5d5cb;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.contact-card{
+  background:white;
+  color:var(--text);
+  border-radius:20px;
+  padding:25px;
+  text-align:center;
+}
+
+.contact-card h3{
+  color:var(--dark);
+  margin-bottom:6px;
+}
+
+.contact-card p{
+  color:var(--muted);
+}
+
+.contact-card a{
+  color:var(--green);
+  font-weight:800;
+}
+
+/* FOOTER */
+
+footer{
+  background:#092519;
+  color:#b9c9bf;
+  padding:30px 0;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.footer-brand{
+  color:white;
+  font-weight:800;
+}
+
+.footer-inner p{
+  font-size:13px;
+}
+
+/* WHATSAPP FLOAT */
+
+.whatsapp{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#20b954;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  box-shadow:0 8px 25px rgba(0,0,0,.2);
+  z-index:999;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  nav{
+    display:none;
+  }
+
+  .hero{
+    padding:55px 0;
+  }
+
+  .hero-grid,
+  .farm-grid,
+  .membership-box{
+    grid-template-columns:1fr;
+  }
+
+  .hero-photo img{
+    height:360px;
+  }
+
+  .green-grid,
+  .plan-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .plan.popular{
+    transform:none;
+  }
+
+  .farm-photo img{
+    height:350px;
+  }
+
+  .membership-box{
+    padding:30px;
+  }
+
+  .section-heading h2,
+  .farm-text h2{
+    font-size:34px;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<header>
+<div class="container nav">
 
-  <header>
-    <div class="container nav">
+<a href="#home" class="brand">
+<img src="logo.png" alt="Kingpin Microgreens Logo">
+<div class="brand-text">
+<strong>Kingpin Microgreens</strong>
+<span>Fresh Greens. Healthier You.</span>
+</div>
+</a>
 
-      <a href="#home" class="brand">
-        <img
-          src="images/logo.jpg"
-          alt="Kingpin Microgreens Logo"
-          class="brand-logo"
-        >
+<nav>
+<a href="#home">Home</a>
+<a href="#greens">Our Greens</a>
+<a href="#farm">Our Farm</a>
+<a href="#plans">Plans</a>
+<a href="#membership">Membership</a>
+<a href="#contact">Contact</a>
+<a class="btn btn-primary"
+href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20place%20an%20order."
+target="_blank">
+Order Now
+</a>
+</nav>
 
-        <div class="brand-text">
-          <strong>Kingpin Microgreens</strong>
-          <span>Pondha, Dehradun</span>
-        </div>
-      </a>
+</div>
+</header>
 
-      <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
-        ☰
-      </button>
 
-      <nav id="navMenu">
-        <a href="#home" onclick="closeMenu()">Home</a>
-        <a href="#varieties" onclick="closeMenu()">Our Greens</a>
-        <a href="#farm" onclick="closeMenu()">Our Farm</a>
-        <a href="#plans" onclick="closeMenu()">Plans</a>
-        <a href="#membership" onclick="closeMenu()">Membership</a>
-        <a href="#contact" onclick="closeMenu()">Contact</a>
+<!-- HERO -->
 
-        <a
-          href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20place%20an%20order."
-          class="nav-order"
-          target="_blank"
-        >
-          Order Now
-        </a>
-      </nav>
+<section class="hero" id="home">
+<div class="container hero-grid">
 
-    </div>
-  </header>
+<div>
+<div class="badge">Freshly Grown • Pondha, Dehradun</div>
 
+<h1>
+Small Greens.<br>
+<span>Big Nutrition.</span>
+</h1>
 
-  <!-- HERO -->
+<p>
+Fresh, nutritious microgreens grown with care and delivered
+to your doorstep in Dehradun. Start your healthy journey
+with our ₹99 Trial Pack.
+</p>
 
-  <main>
+<div class="hero-buttons">
 
-    <section class="hero" id="home">
+<a class="btn btn-primary"
+href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20order%20the%20%E2%82%B999%20Trial%20Pack."
+target="_blank">
+Order on WhatsApp
+</a>
 
-      <div class="container hero-grid">
+<a class="btn btn-outline" href="#plans">
+View Plans
+</a>
 
-        <div>
+</div>
+</div>
 
-          <div class="badge">
-            Freshly Grown • Dehradun
-          </div>
+<div class="hero-photo">
+<img src="farm.jpg" alt="Kingpin Microgreens Farm in Dehradun">
+</div>
 
-          <h1>
-            Small Greens.<br>
-            <span>Big Nutrition.</span>
-          </h1>
+</div>
+</section>
 
-          <p>
-            Fresh, nutritious microgreens delivered to your doorstep in
-            Dehradun. Start your journey with our ₹99 Trial Pack.
-          </p>
 
-          <div class="buttons">
+<!-- OUR GREENS -->
 
-            <a
-              href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20order%20the%20%E2%82%B999%20Trial%20Pack."
-              target="_blank"
-              class="btn btn-primary"
-            >
-              Order on WhatsApp
-            </a>
+<section class="greens" id="greens">
 
-            <a href="#plans" class="btn btn-outline">
-              View Plans
-            </a>
+<div class="container">
 
-          </div>
+<div class="section-heading">
+<div class="eyebrow">Our Greens</div>
+<h2>Fresh Microgreens. Great Flavour.</h2>
+<p>
+Choose your favourite greens, freshly grown by Kingpin Microgreens
+in Pondha, Dehradun.
+</p>
+</div>
 
-        </div>
+<div class="green-grid">
 
+<!-- MUSTARD -->
 
-        <div class="hero-image">
+<div class="green-card">
 
-          <img
-            src="images/farm.jpg"
-            alt="Kingpin Microgreens Farm in Dehradun"
-          >
+<img src="mustard.jpg" alt="Mustard Microgreens">
 
-          <div class="hero-card">
-            <strong>Fresh Microgreens</strong>
-            <span>
-              Grown with care. Delivered fresh.
-            </span>
-          </div>
+<div class="green-content">
 
-        </div>
+<h3>MUSTARD PUNCH 🌶️</h3>
 
-      </div>
+<div class="green-tagline">
+Bold. Peppery. Powerful.
+</div>
 
-    </section>
+<p>
+A bold and peppery microgreen with a distinctive punch.
+Perfect for salads, sandwiches, wraps and everyday meals.
+</p>
 
+</div>
+</div>
 
-    <!-- WHY KINGPIN -->
 
-    <section class="why">
+<!-- RADISH -->
 
-      <div class="container">
+<div class="green-card">
 
-        <div class="section-head">
+<img src="radish.jpg" alt="Radish Microgreens">
 
-          <div class="eyebrow">
-            Why Kingpin
-          </div>
+<div class="green-content">
 
-          <h2>
-            Freshness you can see.
-          </h2>
+<h3>RADISH RUSH 🌸</h3>
 
-          <p>
-            We grow our microgreens with care and deliver them fresh to
-            homes across our service area in Dehradun.
-          </p>
+<div class="green-tagline">
+Crisp. Zesty. Vibrant.
+</div>
 
-        </div>
+<p>
+Fresh and vibrant microgreens with a crisp texture and
+zesty flavour that adds a delicious kick to your meals.
+</p>
 
+</div>
+</div>
 
-        <div class="features">
 
-          <div class="feature">
-            <div class="feature-icon">🌱</div>
-            <h3>Freshly Grown</h3>
-            <p>
-              Fresh microgreens grown in our controlled growing setup.
-            </p>
-          </div>
+<!-- BROCCOLI -->
 
-          <div class="feature">
-            <div class="feature-icon">🥬</div>
-            <h3>Nutritious</h3>
-            <p>
-              Add fresh greens to salads, sandwiches, meals and more.
-            </p>
-          </div>
+<div class="green-card">
 
-          <div class="feature">
-            <div class="feature-icon">🚚</div>
-            <h3>Doorstep Delivery</h3>
-            <p>
-              Convenient delivery for customers in our Dehradun service area.
-            </p>
-          </div>
+<img src="broccoli.jpg" alt="Broccoli Microgreens">
 
-          <div class="feature">
-            <div class="feature-icon">❤️</div>
-            <h3>Grown With Care</h3>
-            <p>
-              Every batch is grown and prepared with attention to freshness.
-            </p>
-          </div>
+<div class="green-content">
 
-        </div>
+<h3>BROCCOLI BOOST 🥦</h3>
 
-      </div>
+<div class="green-tagline">
+Fresh. Mild. Nourishing.
+</div>
 
-    </section>
+<p>
+Mild, fresh and easy to enjoy. A simple way to add
+nutritious greens to salads, sandwiches and daily meals.
+</p>
 
+</div>
+</div>
 
-    <!-- VARIETIES -->
+</div>
+</div>
+</section>
 
-    <section class="varieties" id="varieties">
 
-      <div class="container">
+<!-- FARM -->
 
-        <div class="section-head">
+<section class="farm" id="farm">
 
-          <div class="eyebrow">
-            Our Microgreens
-          </div>
+<div class="container farm-grid">
 
-          <h2>
-            Choose your greens.
-          </h2>
+<div class="farm-photo">
+<img src="farm.jpg" alt="Kingpin Microgreens Farm">
+</div>
 
-          <p>
-            Explore the fresh microgreens available from Kingpin.
-          </p>
+<div class="farm-text">
 
-        </div>
+<div class="eyebrow">Our Farm</div>
 
+<h2>Grown with Care in Dehradun</h2>
 
-        <div class="variety-grid">
+<p>
+At Kingpin Microgreens, we grow fresh microgreens in our own
+setup in Pondha, Dehradun. Our focus is on quality, freshness
+and bringing healthy greens closer to your table.
+</p>
 
-          <!-- VARIETY 1 -->
+<div class="checks">
 
-          <article class="variety">
+<div class="check">
+<span>✓</span> Freshly grown microgreens
+</div>
 
-            <img
-              src="images/variety-1.jpg"
-              alt="Kingpin Microgreens Variety 1"
-            >
+<div class="check">
+<span>✓</span> Clean and controlled growing environment
+</div>
 
-            <div class="variety-content">
+<div class="check">
+<span>✓</span> Locally grown in Pondha, Dehradun
+</div>
 
-              <h3>
-                Variety Name 1
-              </h3>
+<div class="check">
+<span>✓</span> Delivered fresh with care
+</div>
 
-              <p>
-                Fresh, tender microgreens. Add their vibrant flavour and
-                freshness to your everyday meals.
-              </p>
+</div>
 
-            </div>
+<a class="btn btn-primary"
+href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20know%20more%20about%20your%20farm."
+target="_blank">
+Know More
+</a>
 
-          </article>
+</div>
 
+</div>
+</section>
 
-          <!-- VARIETY 2 -->
 
-          <article class="variety">
+<!-- PLANS -->
 
-            <img
-              src="images/variety-2.jpg"
-              alt="Kingpin Microgreens Variety 2"
-            >
+<section class="plans" id="plans">
 
-            <div class="variety-content">
+<div class="container">
 
-              <h3>
-                Variety Name 2
-              </h3>
+<div class="section-heading">
+<div class="eyebrow">Our Plans</div>
+<h2>Simple Plans for a Healthier You</h2>
+<p>Choose the plan that fits your lifestyle.</p>
+</div>
 
-              <p>
-                Freshly grown microgreens that work beautifully in salads,
-                sandwiches, bowls and everyday meals.
-              </p>
+<div class="plan-grid">
 
-            </div>
 
-          </article>
+<div class="plan">
 
+<h3>Trial Pack</h3>
 
-          <!-- VARIETY 3 -->
+<div class="price">₹99</div>
 
-          <article class="variety">
+<ul>
+<li>Fresh microgreens</li>
+<li>Perfect for first-time customers</li>
+<li>Local delivery in Dehradun</li>
+</ul>
 
-            <img
-              src="images/variety-3.jpg"
-              alt="Kingpin Microgreens Variety 3"
-            >
+<a class="btn btn-primary"
+href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20order%20the%20%E2%82%B999%20Trial%20Pack."
+target="_blank">
+Order Trial Pack
+</a>
 
-            <div class="variety-content">
+</div>
 
-              <h3>
-                Variety Name 3
-              </h3>
 
-              <p>
-                Fresh and flavourful greens, harvested with care and prepared
-                for your kitchen.
-              </p>
+<div class="plan popular">
 
-            </div>
+<div class="popular-label">MOST POPULAR</div>
 
-          </article>
+<h3>5 Deliveries</h3>
 
-        </div>
+<div class="price">₹2,500</div>
 
-        <div class="variety-note">
-          More varieties can be added as your collection grows.
-        </div>
+<ul>
+<li>5 deliveries every month</li>
+<li>Fresh microgreens</li>
+<li>Convenient recurring supply</li>
+<li>Local delivery in Dehradun</li>
+</ul>
 
-      </div>
+<a class="btn btn-primary"
+href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20join%20the%20%E2%82%B92500%205-Delivery%20Plan."
+target="_blank">
+Join This Plan
+</a>
 
-    </section>
+</div>
 
 
-    <!-- FARM -->
+<div class="plan">
 
-    <section id="farm">
+<h3>10 Deliveries</h3>
 
-      <div class="container farm-grid">
+<div class="price">₹5,000</div>
 
-        <div class="farm-photo">
+<ul>
+<li>10 deliveries every month</li>
+<li>Fresh microgreens</li>
+<li>Regular supply</li>
+<li>Local delivery in Dehradun</li>
+</ul>
 
-          <img
-            src="images/farm.jpg"
-            alt="Kingpin Microgreens growing farm"
-          >
+<a class="btn btn-primary"
+href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20join%20the%20%E2%82%B95000%2010-Delivery%20Plan."
+target="_blank">
+Join This Plan
+</a>
 
-        </div>
+</div>
 
+</div>
+</div>
+</section>
 
-        <div class="farm-content">
 
-          <div class="eyebrow">
-            From Our Farm
-          </div>
+<!-- MEMBERSHIP -->
 
-          <h2>
-            Grown fresh in Dehradun.
-          </h2>
+<section class="membership" id="membership">
 
-          <p>
-            At Kingpin Microgreens, we grow fresh microgreens in our own
-            growing setup in Pondha, Dehradun.
-          </p>
+<div class="container">
 
-          <p>
-            Our focus is simple: fresh greens, careful growing and convenient
-            delivery to our customers.
-          </p>
+<div class="membership-box">
 
+<div>
+<div class="eyebrow">Membership</div>
 
-          <div class="farm-points">
+<h2>Join the Kingpin Community</h2>
 
-            <div class="farm-point">
-              <div class="tick">✓</div>
-              <div>
-                <strong>Fresh batches</strong><br>
-                <span>Grown regularly for freshness.</span>
-              </div>
-            </div>
+<p>
+Want regular fresh microgreens at your doorstep?
+Fill out our membership form and our team will get in touch
+with you to confirm your plan and delivery details.
+</p>
+</div>
 
-            <div class="farm-point">
-              <div class="tick">✓</div>
-              <div>
-                <strong>Carefully grown</strong><br>
-                <span>Attention to every growing cycle.</span>
-              </div>
-            </div>
+<div class="membership-action">
 
-            <div class="farm-point">
-              <div class="tick">✓</div>
-              <div>
-                <strong>Local delivery</strong><br>
-                <span>Serving customers around Dehradun.</span>
-              </div>
-            </div>
+<a class="btn btn-primary"
+href="https://docs.google.com/forms/d/1mJm42ubMtQ8K8gniwMHO_9sNa0_iKRCzHKRxwEFaRyQ/viewform"
+target="_blank">
+Open Membership Form
+</a>
 
-          </div>
+<p style="font-size:13px;margin-top:10px;">
+Takes less than 2 minutes
+</p>
 
-          <a
-            href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20know%20more%20about%20your%20microgreens."
-            target="_blank"
-            class="btn btn-primary"
-          >
-            Talk to Us on WhatsApp
-          </a>
+</div>
 
-        </div>
+</div>
+</div>
+</section>
 
-      </div>
 
-    </section>
+<!-- CONTACT -->
 
+<section class="contact" id="contact">
 
-    <!-- PLANS -->
+<div class="container">
 
-    <section class="plans" id="plans">
+<div class="section-heading">
 
-      <div class="container">
+<div class="eyebrow">Contact</div>
 
-        <div class="section-head">
+<h2>Let's Grow Healthier Together</h2>
 
-          <div class="eyebrow">
-            Simple Plans
-          </div>
+<p>
+Have a question or want to place an order?
+Get in touch with Kingpin Microgreens.
+</p>
 
-          <h2>
-            Start small. Stay fresh.
-          </h2>
+</div>
 
-          <p>
-            Choose the option that works best for you.
-          </p>
 
-        </div>
+<div class="contact-grid">
 
+<div class="contact-card">
 
-        <div class="plan-grid">
+<h3>WhatsApp</h3>
 
+<p>
+<a href="https://wa.me/916399905124" target="_blank">
+6399905124
+</a>
+</p>
 
-          <!-- TRIAL -->
+</div>
 
-          <div class="plan">
 
-            <h3>Trial Pack</h3>
+<div class="contact-card">
 
-            <div class="price">
-              ₹99
-            </div>
+<h3>Call Us</h3>
 
-            <div class="plan-desc">
-              A simple way to try Kingpin Microgreens.
-            </div>
+<p>
+<a href="tel:+916399905124">
+6399905124
+</a>
+</p>
 
-            <ul>
-              <li>Fresh microgreens</li>
-              <li>Great for first-time customers</li>
-              <li>Local delivery</li>
-              <li>Order through WhatsApp</li>
-            </ul>
+</div>
 
-            <a
-              href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20order%20the%20%E2%82%B999%20Trial%20Pack."
-              target="_blank"
-              class="btn btn-primary"
-            >
-              Order Trial Pack
-            </a>
 
-          </div>
+<div class="contact-card">
 
+<h3>Our Location</h3>
 
-          <!-- 5 DELIVERY -->
+<p>
+Pondha, Dehradun
+</p>
 
-          <div class="plan featured">
+</div>
 
-            <div class="popular">
-              MOST POPULAR
-            </div>
+</div>
+</div>
+</section>
 
-            <h3>5 Deliveries</h3>
 
-            <div class="price">
-              ₹2,500
-            </div>
+<!-- FOOTER -->
 
-            <div class="plan-desc">
-              Monthly plan with 5 fresh deliveries.
-            </div>
+<footer>
 
-            <ul>
-              <li>5 deliveries every month</li>
-              <li>Fresh microgreens</li>
-              <li>Convenient recurring supply</li>
-              <li>Local Dehradun delivery</li>
-            </ul>
+<div class="container footer-inner">
 
-            <a
-              href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20join%20the%20%E2%82%B92%2C500%205-Delivery%20Membership."
-              target="_blank"
-              class="btn btn-primary"
-            >
-              Join This Plan
-            </a>
+<div class="footer-brand">
+Kingpin Microgreens
+</div>
 
-          </div>
+<p>
+© 2026 Kingpin Microgreens. All rights reserved.
+</p>
 
+</div>
 
-          <!-- 10 DELIVERY -->
+</footer>
 
-          <div class="plan">
 
-            <h3>10 Deliveries</h3>
+<!-- FLOATING WHATSAPP -->
 
-            <div class="price">
-              ₹5,000
-            </div>
-
-            <div class="plan-desc">
-              Monthly plan with 10 fresh deliveries.
-            </div>
-
-            <ul>
-              <li>10 deliveries every month</li>
-              <li>Fresh microgreens</li>
-              <li>Regular supply</li>
-              <li>Local Dehradun delivery</li>
-            </ul>
-
-            <a
-              href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20join%20the%20%E2%82%B95%2C000%2010-Delivery%20Membership."
-              target="_blank"
-              class="btn btn-primary"
-            >
-              Join This Plan
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- MEMBERSHIP FORM -->
-
-    <section class="membership" id="membership">
-
-      <div class="container">
-
-        <div class="membership-box">
-
-          <div class="membership-info">
-
-            <div class="eyebrow">
-              Membership
-            </div>
-
-            <h2>
-              Become a Kingpin member.
-            </h2>
-
-            <p>
-              Want regular fresh microgreens at your doorstep?
-              Fill out the membership form and our team will get in touch.
-            </p>
-
-            <ul class="membership-list">
-              <li>Choose your preferred plan</li>
-              <li>Share your delivery details</li>
-              <li>Easy membership registration</li>
-              <li>Fresh deliveries every month</li>
-            </ul>
-
-            <br>
-
-            <a
-              href="https://docs.google.com/forms/d/1mJm42ubMtQ8K8gniwMHO_9sNa0_iKRCzHKRxwEFaRyQ/viewform"
-              target="_blank"
-              class="btn btn-primary"
-            >
-              Open Membership Form
-            </a>
-
-          </div>
-
-
-          <div class="form-wrap">
-
-            <iframe
-              src="https://docs.google.com/forms/d/e/1mJm42ubMtQ8K8gniwMHO_9sNa0_iKRCzHKRxwEFaRyQ/viewform?embedded=true"
-              title="Kingpin Microgreens Membership Form"
-              loading="lazy"
-            >
-              Loading…
-            </iframe>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- GALLERY -->
-
-    <section class="gallery">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div class="eyebrow">
-            Our Gallery
-          </div>
-
-          <h2>
-            See where your greens are grown.
-          </h2>
-
-          <p>
-            A glimpse into the Kingpin Microgreens growing setup.
-          </p>
-
-        </div>
-
-
-        <div class="gallery-grid">
-
-          <div class="gallery-item">
-            <img
-              src="images/farm.jpg"
-              alt="Kingpin Microgreens farm"
-            >
-          </div>
-
-          <div class="gallery-item">
-            <img
-              src="images/variety-1.jpg"
-              alt="Fresh microgreens"
-            >
-          </div>
-
-          <div class="gallery-item">
-            <img
-              src="images/variety-2.jpg"
-              alt="Kingpin microgreens"
-            >
-          </div>
-
-          <div class="gallery-item">
-            <img
-              src="images/variety-3.jpg"
-              alt="Freshly grown microgreens"
-            >
-          </div>
-
-          <div class="gallery-item">
-            <img
-              src="images/product.jpg"
-              alt="Kingpin Microgreens fresh product"
-            >
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- CTA -->
-
-    <section class="cta">
-
-      <div class="container">
-
-        <h2>
-          Ready to try fresh microgreens?
-        </h2>
-
-        <p>
-          Start with our ₹99 Trial Pack and discover the Kingpin difference.
-        </p>
-
-        <a
-          href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20try%20your%20%E2%82%B999%20Trial%20Pack."
-          target="_blank"
-          class="btn btn-primary"
-        >
-          Order Your Trial Pack
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div class="eyebrow">
-            Contact
-          </div>
-
-          <h2>
-            Let's grow healthier together.
-          </h2>
-
-          <p>
-            Have a question or want to place an order? Get in touch with us.
-          </p>
-
-        </div>
-
-
-        <div class="contact-grid">
-
-          <div class="contact-card">
-            <div class="icon">📍</div>
-            <h3>Location</h3>
-            <p>Pondha, Dehradun</p>
-          </div>
-
-          <div class="contact-card">
-            <div class="icon">📱</div>
-            <h3>WhatsApp</h3>
-            <p>6399905124</p>
-          </div>
-
-          <div class="contact-card">
-            <div class="icon">🌱</div>
-            <h3>Kingpin Microgreens</h3>
-            <p>Freshly grown in Dehradun</p>
-          </div>
-
-        </div>
-
-        <br>
-
-        <div style="text-align:center;">
-
-          <a
-            href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20have%20a%20query."
-            target="_blank"
-            class="btn btn-primary"
-          >
-            Chat on WhatsApp
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="container">
-
-      <div class="footer-grid">
-
-        <div>
-          <h3>Kingpin Microgreens</h3>
-          <p>
-            Fresh, nutritious microgreens grown with care and delivered
-            around Dehradun.
-          </p>
-        </div>
-
-        <div>
-          <h3>Quick Links</h3>
-
-          <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#varieties">Our Greens</a>
-            <a href="#plans">Plans</a>
-            <a href="#membership">Membership</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-
-        <div>
-          <h3>Contact</h3>
-
-          <div class="footer-links">
-            <a href="https://wa.me/916399905124" target="_blank">
-              WhatsApp: 6399905124
-            </a>
-
-            <a href="#contact">
-              Pondha, Dehradun
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-
-      <div class="copyright">
-        © <span id="year"></span> Kingpin Microgreens. All rights reserved.
-      </div>
-
-    </div>
-
-  </footer>
-
-
-  <!-- WHATSAPP FLOATING BUTTON -->
-
-  <a
-    class="whatsapp"
-    href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20order%20microgreens."
-    target="_blank"
-    aria-label="Chat with Kingpin Microgreens on WhatsApp"
-  >
-    ☎
-  </a>
-
-
-  <!-- JAVASCRIPT -->
-
-  <script>
-
-    function toggleMenu() {
-      const menu = document.getElementById("navMenu");
-      menu.classList.toggle("open");
-    }
-
-    function closeMenu() {
-      const menu = document.getElementById("navMenu");
-      menu.classList.remove("open");
-    }
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-  </script>
+<a class="whatsapp"
+href="https://wa.me/916399905124?text=Hello%20Kingpin%20Microgreens%2C%20I%20want%20to%20know%20more."
+target="_blank"
+aria-label="WhatsApp">
+☏
+</a>
 
 </body>
 </html>
